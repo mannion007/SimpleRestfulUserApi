@@ -1,5 +1,6 @@
 Simple User API
 ===============
+[![Build Status](https://travis-ci.org/mannion007/SimpleRestfulUserApi.svg?branch=master)](https://travis-ci.org/mannion007/SimpleRestfulUserApi)
 
 A Simple no-framework RESTful User API created as a learning exercise.
 
