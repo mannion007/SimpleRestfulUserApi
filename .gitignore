@@ -1,0 +1,8 @@
+*.ini
+*.log
+.c9/*
+vendor
+generated-conf
+generated-sql
+propel.yml
+propel.yml.dist
