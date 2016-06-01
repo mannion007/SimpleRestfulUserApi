@@ -68,11 +68,11 @@ class RouterTest extends PHPUnit_Framework_TestCase
         /** Method is private */
         $method = $this->getPrivateMethodForTest('validateUri');
         
-        $this->assertFalse($method->invokeArgs($this->router,array('/orange/eat')));
-        $this->assertFalse($method->invokeArgs($this->router,array('/juice/drink')));
-        $this->assertFalse($method->invokeArgs($this->router,array('/pear/throw/')));
-        $this->assertFalse($method->invokeArgs($this->router,array('/apple/eat/1')));
-        $this->assertFalse($method->invokeArgs($this->router,array('/apple/eat/1/quickly')));
+        $this->assertTrue($method->invokeArgs($this->router,array('/orange/eat')));
+        $this->assertTrue($method->invokeArgs($this->router,array('/juice/drink')));
+        $this->assertTrue($method->invokeArgs($this->router,array('/pear/throw/')));
+        $this->assertTrue($method->invokeArgs($this->router,array('/apple/eat/1')));
+        $this->assertTrue($method->invokeArgs($this->router,array('/apple/eat/1/quickly')));
     }
     
     public function testValidateControllerWhenControllerDoesExist()
