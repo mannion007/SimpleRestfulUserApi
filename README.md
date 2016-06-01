@@ -16,7 +16,7 @@ Running the tests
 =================
 
 1. Ensure you have installed dependencies with [Composer](https://getcomposer.org/)
-2. {projectRoot}/vendor/bin/phpunit {projectRoot}/tests
+2. {projectRoot}/vendor/bin/phpunit
 
 Resources
 =========
@@ -41,4 +41,4 @@ Other Information
 =================
 If you can learn anything from this code, or modify and/or extend it to do anything more interesting or useful please feel free to do so.
 
-Developed using [Cloud9Ide](https://ide.c9.io) and [Postman](https://www.getpostman.com).
+Developed using [Cloud9Ide](https://ide.c9.io) and [Postman](https://www.getpostman.com) built using [Travis](https://docs.travis-ci.com/).
