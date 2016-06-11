@@ -2,7 +2,5 @@
 *.log
 .c9/*
 vendor
-generated-conf
-generated-sql
+generated-*
 propel.yml
-propel.yml.dist
