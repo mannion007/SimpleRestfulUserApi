@@ -24,8 +24,13 @@ class UserController extends BaseController
                 $user->setForename($providedParameters[UrlConstants::FORENAME]);
                 $user->setSurname($providedParameters[UrlConstants::SURNAME]);
                 $user->setEmail($providedParameters[UrlConstants::EMAIL]);
+                
+                if (false === $user->validate()) {
+                    return $this->showValidationErrors($user);
+                }
+        
                 $user->save();
-                $this->successResponse($user->toJson());
+                $this->successResponse($user);
             }
         }
     }
@@ -50,8 +55,13 @@ class UserController extends BaseController
                     $user->setForename($providedParameters[UrlConstants::FORENAME]);
                     $user->setSurname($providedParameters[UrlConstants::SURNAME]);
                     $user->setEmail($providedParameters[UrlConstants::EMAIL]);
+                    
+                    if (false === $user->validate()) {
+                        return $this->showValidationErrors($user);
+                    }
+                
                     $user->save();
-                    $this->successResponse($user->toJson());
+                    $this->successResponse($user);
                 }
             }
         }
@@ -70,7 +80,7 @@ class UserController extends BaseController
                 if(null === $user) {
                     $this->errorResponse(ErrorConstants::USER_NOT_FOUND);
                 } else {
-                    $this->successResponse($user->toJson());  
+                    $this->successResponse($user);  
                 }
             }
         }
@@ -90,7 +100,7 @@ class UserController extends BaseController
                     $this->errorResponse(ErrorConstants::USER_NOT_FOUND);
                 } else {
                     $user->delete();
-                    $this->successResponse($user->toJson());
+                    $this->successResponse($user);
                 }
             }
         }

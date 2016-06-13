@@ -12,6 +12,16 @@
         <column name="surname" type="varchar" size="100" required="true"/>
         <column name="created" type="timestamp" required="true"/>
         <column name="updated" type="timestamp" required="true"/>
+        
+        <behavior name="validate">
+            <parameter name="emailNotNull" value="{column: email, validator: NotNull}" />
+            <parameter name="emailIsValid" value="{column: email, validator: Email}" />
+            <parameter name="emailLength" value="{column: email, validator: Length, options: {min: 1, max: 200}}" />
+            <parameter name="forenameNotNull" value="{column: forename, validator: NotNull}" />
+            <parameter name="forenameLength" value="{column: forename, validator: Length, options: {min: 1, max: 100}}" />
+            <parameter name="surnameNotNull" value="{column: surname, validator: NotNull}" />
+            <parameter name="surnameLength" value="{column: surname, validator: Length, options: {min: 1, max: 100}}" />
+        </behavior>
     </table>
 
 </database>

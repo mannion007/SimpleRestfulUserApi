@@ -48,8 +48,6 @@ class Router
     {
         $urlParts = array_filter(explode('/', $uri));
         
-        echo count($urlParts);
-        
         if(2 <= count($urlParts)) {
             return true;
         }

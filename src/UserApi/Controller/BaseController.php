@@ -51,9 +51,22 @@ abstract class BaseController
         return true;
     }
     
+    protected function showValidationErrors($model)
+    {
+        $errorMessages = [];
+        $failures = $model->getValidationFailures();
+    
+        foreach ($failures as $failure) {
+            $errorMessages[$failure->getPropertyPath()] = $failure->getMessage();
+        }
+        
+        return $this->errorResponse($errorMessages);
+    }
+    
     protected function successResponse($response)
     {
-        echo $response;
+        echo json_encode(array('success' => $response->toArray()));
+        exit();
     }
     
     protected function errorResponse($errorMessage)

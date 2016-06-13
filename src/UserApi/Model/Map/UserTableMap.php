@@ -167,6 +167,19 @@ class UserTableMap extends TableMap
     } // buildRelations()
 
     /**
+     *
+     * Gets the list of behaviors registered for this table
+     *
+     * @return array Associative array (name => parameters) of behaviors
+     */
+    public function getBehaviors()
+    {
+        return array(
+            'validate' => array('emailNotNull' => array ('column' => 'email','validator' => 'NotNull',), 'emailIsValid' => array ('column' => 'email','validator' => 'Email',), 'emailLength' => array ('column' => 'email','validator' => 'Length','options' => array ('min' => 1,'max' => 200,),), 'forenameNotNull' => array ('column' => 'forename','validator' => 'NotNull',), 'forenameLength' => array ('column' => 'forename','validator' => 'Length','options' => array ('min' => 1,'max' => 100,),), 'surnameNotNull' => array ('column' => 'surname','validator' => 'NotNull',), 'surnameLength' => array ('column' => 'surname','validator' => 'Length','options' => array ('min' => 1,'max' => 100,),), ),
+        );
+    } // getBehaviors()
+
+    /**
      * Retrieves a string version of the primary key from the DB resultset row that can be used to uniquely identify a row in this table.
      *
      * For tables with a single-column primary key, that simple pkey value will be returned.  For tables with
